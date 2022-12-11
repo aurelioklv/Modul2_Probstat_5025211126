@@ -17,7 +17,7 @@ Berdasarkan data pada tabel diatas, diketahui kadar saturasi oksigen  dari respo
     sd(selisih)
     ```
     ![image](https://user-images.githubusercontent.com/87407047/206888545-6885b547-cfdd-44c7-950e-24017152c6ec.png)
-- b. Carilah nilai t (p-value)
+- b. Carilah nilai t (p-value)  
     P-value dapat dicari menggunakan fungsi ```t.test```. Data yang diuji berasal dari observasi berpasangan, maka nilai ```paired``` pada fungsi diisikan TRUE
     ```
     t.test(sesudah, sebelum, alternative = "two.sided", paired = TRUE, mu = 0)
@@ -139,7 +139,7 @@ Maka Kerjakan atau Carilah:
     Dari uji tersebut didapatkan ```p-value = 0.8054```. Pada 𝛼=0.05, p-value yang didapatkan bernilai lebih besar sehingga H0 diterima (Variansi tiap grup bernilai sama)
 
 
-- c. Untuk uji ANOVA, buatlah model linier dengan Panjang versus Grup dan beri nama model tersebut model 1.
+- c. Untuk uji ANOVA, buatlah model linier dengan Panjang versus Grup dan beri nama model tersebut model 1.  
     Model linier dapat dibuat menggunakan fungsi ```lm```. Kemudian, model linier tersebut menjadi argumen pada fungsi ```anova```.  
     ```
     model1 <- lm(Length~Group, data = myData)
@@ -147,12 +147,12 @@ Maka Kerjakan atau Carilah:
     ```  
     ![image](https://user-images.githubusercontent.com/87407047/206900990-faaf448b-abe4-468a-84f0-45b94512c2ae.png)  
     
-- d. Dari Hasil Poin C , Berapakah nilai-p ? ,  Apa yang dapat Anda simpulkan dari H0?
+- d. Dari Hasil Poin C , Berapakah nilai-p ? ,  Apa yang dapat Anda simpulkan dari H0?  
     P-value yang didapatkan pada poin c bernilai ```0.0013```. Nilai tersebut jauh lebih kecil daripada tingkat signifikansi (```𝛼=0.05```) sehingga H0 ditolak.  
     Kesimpulan:
     >Ada setidaknya satu pasang populasi yang memiliki rata-rata panjang berbeda
 
-- e. Verifikasilah jawaban model 1 dengan Post-hooc test TukeyHSD ,  dari nilai p yang didapatkan apakah satu jenis kucing lebih panjang dari yang lain? Jelaskan.
+- e. Verifikasilah jawaban model 1 dengan Post-hooc test TukeyHSD ,  dari nilai p yang didapatkan apakah satu jenis kucing lebih panjang dari yang lain? Jelaskan.  
     Dari poin sebelumnya diketahui bahwa terdapat setidaknya satu pasang populasi yang memiliki .Verifikasi dapat dilakukan menggunakan fungsi ```TukeyHSD()```.  
     ```
     TukeyHSD(aov(model1))
